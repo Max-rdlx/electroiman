@@ -1,0 +1,125 @@
+/* ===== GENERAL ===== */
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: #111;
+  border-bottom: 2px solid #222;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.subtitle {
+  opacity: 0.6;
+  margin-top: .5rem;
+}
+
+/* ===== CONTENEDOR ===== */
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ===== CAJAS ===== */
+.box {
+  background: #1a1a1a;
+  padding: 1.8rem;
+  border-radius: 12px;
+  border: 2px solid #333;
+  transition: 0.3s ease;
+}
+
+.box h2 {
+  color: #4aa3ff;
+  margin-top: 0;
+}
+
+.box p {
+  line-height: 1.6;
+}
+
+/* ===== HOVER ===== */
+.box:hover {
+  border-color: #007bff;
+  box-shadow: 0 0 15px #007bff55;
+  transform: translateY(-4px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .box {
+    padding: 1.5rem;
+  }
+}
+
+.contact-section {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: #111;
+  border-radius: 12px;
+  border: 2px solid #222;
+  text-align: center;
+}
+
+.contact-section h2 {
+  color: #4aa3ff;
+  margin-bottom: 1.5rem;
+}
+
+
+.contact-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+
+.contact-btn {
+  padding: 0.9rem 1.6rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 10px;
+  border: 2px solid #333;
+  transition: 0.3s ease;
+  display: inline-block;
+}
+
+
+.contact-btn.github {
+  background: #222;
+  color: #fff;
+}
+.contact-btn.github:hover {
+  border-color: #4aa3ff;
+  box-shadow: 0 0 12px #4aa3ff55;
+  transform: translateY(-3px);
+}
+.contact-btn.whatsapp {
+  background: #25d366;
+  color: #000;
+}
+.contact-btn.whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px #25d366aa;
+}

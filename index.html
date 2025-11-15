@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="Página educativa sobre el electroimán: cómo funciona, cómo construirlo, aplicaciones y una demo interactiva.">
+		<title>Electroimán — Ciencia y proyecto práctico</title>
+		<link rel="stylesheet" href = "style.css"> 
+	</head>
+	<body>
+		<header class="site-header" role="banner">
+			<div class="wrap">
+				<h1 class="site-title">Electroimán: guía completa</h1>
+				<p class="site-sub">Cómo funciona, cómo construir uno y experimentos seguros — explicado en lenguaje claro.</p>
+			</div>
+		</header>
+
+		<nav class="toc" aria-label="Tabla de contenidos">
+			<div class="wrap">
+				<a href="#que-es">Qué es</a>
+				<a href="#como-funciona">Cómo funciona</a>
+				<a href="#construir">Construir paso a paso</a>
+				<a href="#aplicaciones">Aplicaciones</a>
+				<a href="#demo">Demo interactiva</a>
+				<a href="#seguridad">Seguridad</a>
+				<a href="#referencias">Referencias</a>
+				<a href="soy.html">Sobre mí</a>
+			</div>
+		</nav>
+
+		<main class="wrap main" role="main">
+			<section id="que-es">
+				<h2>¿Qué es un electroimán?</h2>
+				<p>Un electroimán es un tipo de imán cuyo campo magnético se genera por el paso de corriente eléctrica por una bobina de hilo conductor. A diferencia de los imanes permanentes, su campo puede activarse o desactivarse variando la corriente.</p>
+			</section>
+
+			<section id="como-funciona">
+				<h2>¿Cómo funciona?</h2>
+				<p>Cuando una corriente eléctrica atraviesa una bobina, genera un campo magnético alineado con el eje de la bobina. La fuerza del campo depende de la intensidad de la corriente, del número de vueltas de la bobina y del núcleo (por ejemplo, un núcleo de hierro aumenta significativamente la intensidad del campo).</p>
+				<ul>
+					<li>Intensidad de corriente (I): a mayor I, mayor campo.</li>
+					<li>Número de vueltas (N): más vueltas → mayor campo.</li>
+					<li>Núcleo ferromagnético: multiplica el efecto.</li>
+				</ul>
+			</section>
+
+			<section id="construir">
+				<h2>Construir un electroimán: material y pasos</h2>
+				<h3>Materiales</h3>
+				<ul>
+					<li>Alambre de cobre esmaltado (calibre 22–26)</li>
+					<li>Núcleo: tornillo grande o barra de hierro dulce</li>
+					<li>Batería de 9 V o fuente DC con limitador de corriente</li>
+					<li>Cinta aislante, pelacables y opcionalmente una resistencia para limitar corriente</li>
+				</ul>
+				<h3>Pasos</h3>
+				<ol>
+					<li>Pelar los extremos del alambre.</li>
+					<li>Enrollar muchas vueltas alrededor del núcleo, procurando que las vueltas queden juntas y ordenadas.</li>
+					<li>Asegurar los extremos y conectar a la fuente (con la resistencia si es necesario).</li>
+					<li>Probar atrayendo objetos ferrosos (clavos, clips).</li>
+				</ol>
+			</section>
+
+			<section id="aplicaciones">
+				<h2>Aplicaciones</h2>
+				<p>Los electroimanes se usan en motores eléctricos, relés, cerraduras electromagnéticas, elevadores industriales, grabación magnética y equipos médicos (por ejemplo, resonadores magnéticos controlados electrónicamente).</p>
+			</section>
+
+			<section id="demo" class="demo-section">
+				<h2>Demo interactiva</h2>
+				<p>Usa el control para simular el aumento de corriente/numero de vueltas y ver cómo varía la 'fuerza' visual del electroimán.</p>
+
+				<div class="demo">
+					<div class="demo-visual" aria-hidden="false">
+						<!-- SVG simple que representa una bobina y el núcleo -->
+						<svg id="coilSvg" viewBox="0 0 400 220" role="img" aria-label="Visualización de bobina de electroimán">
+							<defs>
+								<linearGradient id="fieldGrad" x1="0" x2="1">
+									<stop offset="0%" stop-color="#ffd54f" stop-opacity="0" />
+									<stop offset="100%" stop-color="#ff7043" stop-opacity="0.6" />
+								</linearGradient>
+							</defs>
+							<rect x="40" y="60" width="320" height="100" rx="12" fill="#f5f5f5" stroke="#e0e0e0" />
+							<!-- núcleo -->
+							<rect id="core" x="180" y="80" width="40" height="80" rx="6" fill="#9e9e9e" />
+							<!-- bobinas (representadas como arcos) -->
+							<g id="coils" stroke="#616161" stroke-width="3" fill="none">
+								<path d="M150 95 q15 -15 30 0"/>
+								<path d="M170 110 q15 -15 30 0"/>
+								<path d="M190 95 q15 -15 30 0"/>
+								<path d="M210 110 q15 -15 30 0"/>
+							</g>
+							<!-- líneas de campo (visual) -->
+							<g id="fieldLines" fill="none" stroke="url(#fieldGrad)" stroke-width="8" stroke-linecap="round">
+								<path d="M120 40 C160 20, 240 20, 280 40" opacity="0.0"/>
+								<path d="M120 180 C160 200, 240 200, 280 180" opacity="0.0"/>
+							</g>
+						</svg>
+					</div>
+
+					<div class="demo-controls">
+						<label for="strength" class="sr-only">Fuerza del electroimán</label>
+						<input id="strength" type="range" min="0" max="100" value="40">
+						<div class="meter">Fuerza (relativa): <span id="strengthValue">40</span>%</div>
+						<p class="note">Desliza para variar la corriente simulada. Esto es solo una visualización simplificada.</p>
+					</div>
+				</div>
+			</section>
+
+			<section id="seguridad">
+				<h2>Seguridad</h2>
+				<ul>
+					<li>No uses fuentes de alta corriente sin protección y supervisión.</li>
+					<li>Evita dejar baterías conectadas durante mucho tiempo (sobrecalentamiento).</li>
+					<li>Si usas fuentes más poderosas, añade resistencias y mide corriente con un multímetro.</li>
+				</ul>
+				<div class="seguridad-img">
+    			<img src="guantes.png.jpg" alt="Guantes de seguridad">
+    			<p>Usa guantes aislantes cuando manipules conductores o baterías.</p>
+				</div>
+			</section>
+
+			<section id="referencias">
+				<h2>Referencias y recursos</h2>
+				<ul>
+					<li><a href="https://es.wikipedia.org/wiki/Electroim%C3%A1n" target="_blank" rel="noopener">Wikipedia — Electroimán</a></li>
+					<li>Documentación y tutoriales de seguridad eléctrica y proyectos DIY.</li>
+				</ul>
+			<div class="video-box">
+    		<h3>Video recomendado</h3>
+    		<div class="video-responsive">
+        <iframe 
+    		src="https://www.youtube.com/watch?v=AtiZ4MvQdn4"
+			title="Video sobre electroimanes"
+        	frameborder="0" 
+        	allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+			</section>
+		</main>
+
+		<footer class="site-footer">
+			<div class="wrap">
+				<p>Creado con fines educativos.</p>
+			</div>
+		</footer>
+
+		<script src="./demo.js" defer></script>
+	</body>
+</html>
